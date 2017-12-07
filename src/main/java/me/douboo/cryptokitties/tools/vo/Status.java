@@ -20,23 +20,27 @@ public class Status implements Serializable {
 	private long cooldown;
 	private long cooldown_index;
 
+	public boolean isIs_ready() {
+		return is_ready;
+	}
+
 	public void setIs_ready(boolean is_ready) {
 		this.is_ready = is_ready;
 	}
 
-	public boolean getIs_ready() {
-		return is_ready;
+	public boolean isIs_gestating() {
+		return is_gestating;
 	}
 
 	public void setIs_gestating(boolean is_gestating) {
 		this.is_gestating = is_gestating;
 	}
 
-	public boolean getIs_gestating() {
-		return is_gestating;
+	public long getCooldown() {
+		return cooldown;
 	}
 
-	public void setCooldown(int cooldown) {
+	public void setCooldown(long cooldown) {
 		this.cooldown = cooldown;
 	}
 
@@ -46,14 +50,6 @@ public class Status implements Serializable {
 
 	public void setCooldown_index(long cooldown_index) {
 		this.cooldown_index = cooldown_index;
-	}
-
-	public long getCooldown() {
-		return cooldown;
-	}
-
-	public void setCooldown(long cooldown) {
-		this.cooldown = cooldown;
 	}
 
 }

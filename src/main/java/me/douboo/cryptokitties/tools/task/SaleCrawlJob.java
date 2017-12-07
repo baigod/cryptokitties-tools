@@ -83,7 +83,14 @@ public class SaleCrawlJob {
 		public void run() {
 			try {
 				int id = auction.getId();
-				String ret = fac.doGet("https://api.cryptokitties.co/kitties/"+id);
+				String ret = fac.doGet("https://api.cryptokitties.co/kitties/" + id);
+				logger.trace("获得猫详情{}", ret);
+				if (StringUtils.isNotEmpty(ret)) {
+					JSONObject json = JSONObject.parseObject(ret);
+					if (null != json) {
+
+					}
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
