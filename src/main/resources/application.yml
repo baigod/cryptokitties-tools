@@ -1,0 +1,29 @@
+server:
+  port: 6188
+  tomcat: 
+    max-threads: 100 
+
+logging: 
+  config: classpath:logback.xml
+  
+spring: 
+  thymeleaf: 
+    cache: false
+  profiles: 
+    active: development
+  mvc: 
+    view: 
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+---
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://130.252.100.20:3306/test?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf-8
+    username: biz_all
+    password: biz_all
+  
+---
+spring:
+  profiles: production
+
