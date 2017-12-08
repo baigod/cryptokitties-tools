@@ -5,6 +5,8 @@ package me.douboo.cryptokitties.tools.vo;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Auto-generated: 2017-12-07 20:48:12
  *
@@ -32,7 +34,7 @@ public class Seller implements Serializable {
 	}
 
 	public String getNickname() {
-		return nickname;
+		return StringUtils.isEmpty(nickname) ? "" : nickname.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "*");
 	}
 
 	public void setImage(String image) {

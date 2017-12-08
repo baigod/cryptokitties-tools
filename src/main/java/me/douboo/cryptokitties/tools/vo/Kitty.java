@@ -5,9 +5,12 @@ package me.douboo.cryptokitties.tools.vo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
- * Auto-generated: 2017-12-07 20:48:12
+ * Auto-generated: 2017-12-07 20:53:50
  *
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
@@ -16,32 +19,38 @@ public class Kitty implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private int id;
 	private String name;
-	private String image_url;
 	private int generation;
 	private Date created_at;
+	private String image_url;
 	private String color;
+	private String bio;
 	private boolean is_fancy;
 	private boolean is_exclusive;
 	private String fancy_type;
-	private int id;
-	private Owner owner;
 	private Status status;
+	private Auction auction;
+	private Owner owner;
+	private Matron matron;
+	private Sire sire;
+	private List<Children> children;
+	private List<Cattributes> cattributes;
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
-		return name;
-	}
-
-	public void setImage_url(String image_url) {
-		this.image_url = image_url;
-	}
-
-	public String getImage_url() {
-		return image_url;
+		return StringUtils.isEmpty(name) ? "" : name.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "*");
 	}
 
 	public void setGeneration(int generation) {
@@ -60,12 +69,28 @@ public class Kitty implements Serializable {
 		return created_at;
 	}
 
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
+	}
+
+	public String getImage_url() {
+		return image_url;
+	}
+
 	public void setColor(String color) {
 		this.color = color;
 	}
 
 	public String getColor() {
 		return color;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+	public String getBio() {
+		return bio;
 	}
 
 	public void setIs_fancy(boolean is_fancy) {
@@ -92,12 +117,20 @@ public class Kitty implements Serializable {
 		return fancy_type;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
-	public int getId() {
-		return id;
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setAuction(Auction auction) {
+		this.auction = auction;
+	}
+
+	public Auction getAuction() {
+		return auction;
 	}
 
 	public void setOwner(Owner owner) {
@@ -108,12 +141,36 @@ public class Kitty implements Serializable {
 		return owner;
 	}
 
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setMatron(Matron matron) {
+		this.matron = matron;
 	}
 
-	public Status getStatus() {
-		return status;
+	public Matron getMatron() {
+		return matron;
+	}
+
+	public void setSire(Sire sire) {
+		this.sire = sire;
+	}
+
+	public Sire getSire() {
+		return sire;
+	}
+
+	public void setChildren(List<Children> children) {
+		this.children = children;
+	}
+
+	public List<Children> getChildren() {
+		return children;
+	}
+
+	public void setCattributes(List<Cattributes> cattributes) {
+		this.cattributes = cattributes;
+	}
+
+	public List<Cattributes> getCattributes() {
+		return cattributes;
 	}
 
 }

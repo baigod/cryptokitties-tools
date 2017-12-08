@@ -1,7 +1,10 @@
 server:
   port: 6188
   tomcat: 
-    max-threads: 100 
+    max-threads: 1500 
+  jsp-servlet: 
+    init-parameters: 
+      development: true
 
 logging: 
   config: classpath:logback.xml
@@ -15,11 +18,16 @@ spring:
     view: 
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+  datasource:
+    dbcp2:
+      max-idle: 100
+      min-idle: 10
+      max-total: 300
 ---
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://130.252.100.20:3306/test?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://130.252.100.20:3306/test?rewriteBatchedStatements=true&useUnicode=true
     username: biz_all
     password: biz_all
   

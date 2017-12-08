@@ -80,6 +80,15 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.7</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.11.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
 
 	</dependencies>
 	<build>

@@ -21,19 +21,20 @@ public class Auction implements Serializable {
 	private long start_time;
 	private long end_time;
 	private BigDecimal current_price;
-	private String duration;
+	private long duration;
 	private String status;
 	private String type;
 	private int id;
 	private Seller seller;
 	private Kitty kitty;
 
-	public void setDuration(String duration) {
-		this.duration = duration;
+
+	public long getDuration() {
+		return duration;
 	}
 
-	public String getDuration() {
-		return duration;
+	public void setDuration(long duration) {
+		this.duration = duration;
 	}
 
 	public void setStatus(String status) {

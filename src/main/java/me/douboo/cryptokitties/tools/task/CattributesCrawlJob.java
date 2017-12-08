@@ -1,69 +1,63 @@
 package me.douboo.cryptokitties.tools.task;
 
-import java.util.Map.Entry;
+import java.text.DecimalFormat;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.TextNode;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import me.douboo.cryptokitties.tools.data.Kitties;
+import me.douboo.cryptokitties.tools.utils.CattributesUtils;
 import me.douboo.cryptokitties.tools.utils.HttpClientFactory;
 import me.douboo.cryptokitties.tools.vo.Auction;
 import me.douboo.cryptokitties.tools.vo.Kitty;
 
 @Component
-public class SaleCrawlJob {
+public class CattributesCrawlJob {
 
-	private final static Logger logger = LoggerFactory.getLogger(SaleCrawlJob.class);
+	private final static Logger logger = LoggerFactory.getLogger(CattributesCrawlJob.class);
 
-	public static final ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 4);
+	private final static DecimalFormat NFMT = new DecimalFormat(",###");
 
-	@Scheduled(fixedDelay = 1000,initialDelay=5000)
+	@Scheduled(fixedDelay = 600000)
 	public synchronized void exec1() {
 		try {
 			// 查询第一条
-			String ret = curl("https://api.cryptokitties.co/auctions?offset=0&limit=1&type=sire&status=open&sorting=cheap&orderBy=current_price&orderDirection=asc");
-			logger.debug("查询第一条：{}", ret);
+			String ret = curl("http://cryptokittydex.com/");
+			logger.trace("获取属性：{}", ret);
 			if (StringUtils.isNotEmpty(ret)) {
-				JSONObject json = JSONObject.parseObject(ret);
-				if (null != json) {
-					int total = json.getIntValue("total");
-					int group = 100;
-					int p = (int) Math.ceil(total / (double) group);
-					logger.debug("共{}只，分成{}批抓取，每批{}只", total, p, group);
-					Kitties.sales.clear();
-					CountDownLatch latch = new CountDownLatch(p);
-					for (int i = 0; i < p; i++) {
-						pool.execute(new SaleCrawlJobThread(i * group, group, latch));
+				Document doc = Jsoup.parse(ret);
+				Elements layers = doc.select(".cattribute");
+				if (null != layers) {
+					Map<String, Integer> cattributesmap = CattributesUtils.cattributesMap;
+					for (Element e : layers) {
+						Element span = e.selectFirst("span");
+						Number num = NFMT.parse(span.text());
+						TextNode tag = e.textNodes().get(0);
+						logger.debug("HTML解析出:{}({})", tag.text(), num.intValue());
+						cattributesmap.put(tag.text().trim(), num.intValue());
 					}
-					latch.await();
+					logger.debug("当前属性值:{}", JSONObject.toJSON(cattributesmap));
 				}
 			}
 
-			if (!CollectionUtils.isEmpty(Kitties.sales)) {
-				// 清理销售库
-				pool.execute(new AuctionCleanlJobThread());
-				// 遍历所有猫详情
-				CountDownLatch latch = new CountDownLatch(Kitties.sales.entrySet().size());
-				for (Entry<Integer, Auction> auction : Kitties.sales.entrySet()) {
-					pool.execute(new SaleKittyCrawlJobThread(auction.getValue(), latch));
-				}
-				latch.await();
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -133,7 +127,7 @@ public class SaleCrawlJob {
 		@Override
 		public void run() {
 			try {
-				String ret = curl("https://api.cryptokitties.co/auctions?offset=" + offset + "&limit=" + limit + "&type=sale&status=open&sorting=cheap&orderBy=current_price&orderDirection=asc");//&parents=false 
+				String ret = curl("https://api.cryptokitties.co/auctions?offset=" + offset + "&limit=" + limit + "&type=sale&status=open&sorting=cheap&orderBy=current_price&orderDirection=asc");// &parents=false
 				if (StringUtils.isNotEmpty(ret)) {
 					JSONObject json = JSONObject.parseObject(ret);
 					if (null != json) {
