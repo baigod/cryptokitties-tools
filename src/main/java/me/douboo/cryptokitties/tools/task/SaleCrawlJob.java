@@ -84,6 +84,8 @@ public class SaleCrawlJob {
 			Set<Integer> ids = Kitties.sales.keySet();
 			int update = jdbcTemplate.update("DELETE FROM t_auction WHERE id NOT IN (" + StringUtils.join(ids.toArray(), ",") + ")");
 			logger.info("清理{}条auction", update);
+			update = jdbcTemplate.update("DELETE FROM t_kitty WHERE id NOT IN (SELECT kitty_id FROM t_auction)");
+			logger.info("清理{}条kitty", update);
 		}
 	}
 
