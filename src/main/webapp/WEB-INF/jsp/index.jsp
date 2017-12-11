@@ -10,60 +10,47 @@
 <link rel="stylesheet" href="/static/css/bootstrap-table.css">
 <style type="text/css">
 .badge-pill {
-    padding-right: 0.6em;
-    padding-left: 0.6em;
-    border-radius: 10rem;
-    }
-    
-.badge-cattribute {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 21px;
-    margin: 0.25em 0.1em;
-    text-decoration: none;
-    padding: 0.25em 0.4em;
+	padding-right: 0.6em;
+	padding-left: 0.6em;
+	border-radius: 10rem;
 }
 
+.badge-cattribute {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 21px;
+	margin: 0.25em 0.1em;
+	text-decoration: none;
+	padding: 0.25em 0.4em;
+}
 
 .badge-secondary {
-    color: #fff;
-    background-color: #333;
-    padding: 0.05em 0.25em;
-    margin: 0.15em 0.2em 0.15em 0.5em;
+	color: #333;
+	background-color: #fff;
+	padding: 0.05em 0.25em;
+	margin: 0.15em 0.2em 0.15em 0.5em;
 }
 
-.badge-secondary:hover{
-	background-color: #6f42c1;
+.badge-secondary:hover {
+	background-color: #FF0000;
 }
 
 .badge {
-    display: inline-block;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 21px;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 1.35rem;
-    }
+	display: inline-block;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 21px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 1.35rem;
+}
 </style>
 </head>
 <body>
-	<h1>cryptokitties</h1> 
-	<table id="table" 
-		data-height="200px" 
-		data-toggle="table" 
-		data-height="460" 
-		data-url="/data" 
-		data-sort-name="cattributes_sum" 
-		data-sort-order="desc" 
-		data-side-pagination="server"
-		data-pagination="true"
-		data-page-number="1"
-		data-page-size="10" 
-        data-show-toggle="true"
-        data-show-columns="true"
-        data-click-to-select="true"
+	<h1>cryptokitties</h1>
+	<table id="table" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum" data-sort-order="desc" data-side-pagination="server"
+		data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true" data-click-to-select="true"
 		data-page-list="[10, 25, 50, 100,500, All]">
 		<thead>
 			<tr>
@@ -109,14 +96,19 @@
 			},
 			cattributes : function(value, row, index) {
 				var array = eval("(" + row.cattributes_tags + ")");
-				var attrs="";
+				var attrs = "";
 				for (var i = 0; i < array.length; i++) {
 					var item = array[i];
 					console.log(item);
-					var bcolor = "background-color: " + colorRGB2Hex(255 + "," + item.ranking * 3 + "," + item.ranking * 3);
-					attrs = attrs + [ '<a class="badge badge-pill badge-cattribute" style="'+bcolor+'" href="http://cryptokittydex.com/cattributes/'
-						+ item.attr + '" target="_blank">' + item.attr + '<span class="badge badge-pill badge-secondary">'+item.num+'</span></a>' ]
-						.join('');
+					var bcolor = "background-color: "
+							+ colorRGB2Hex(255 + "," + item.ranking * 3 + ","
+									+ item.ranking * 3);
+					attrs = attrs
+							+ [ '<a class="badge badge-pill badge-cattribute" style="'+bcolor+'" href="http://cryptokittydex.com/cattributes/'
+						+ item.attr + '" target="_blank">'
+									+ item.attr
+									+ '<span class="badge badge-pill badge-secondary">'
+									+ item.num + '</span></a>' ].join('');
 				}
 				return attrs;
 			},
@@ -138,7 +130,16 @@
 
 
 	<footer>
-		如有需求和建议，请加Q群469544103<br> 捐助开发者(ETH)<br> 0x23b96A20Fae711ED6D286feAEED437a6831e3dD7<br>
+		<div style="font-weight: bold;">Help:</div>
+		<div>属性色值从深到浅，表示属性的稀有度排行</div>
+		<div style="font-weight: bold;">Plans:</div>
+		<div>1.0:完成基本属性的销售数据查询</div>
+		<div>1.1:完成基本属性的求偶数据查询</div>
+		<div>2.0:基因数据快速匹配</div>
+		<div>3.0:基于销售和求偶的行情K线，对猫做估值计算</div>
+		<div style="font-weight: bold;">Notes:</div>
+		<div>如有需求和建议，请加Q群469544103</div>
+		<div>捐助开发者(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
 	</footer>
 </body>
 </html>
