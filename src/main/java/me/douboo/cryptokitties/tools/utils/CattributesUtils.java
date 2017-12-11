@@ -49,7 +49,7 @@ public class CattributesUtils {
 			return 0;
 		String[] catts = cattributes.split(",");
 		int sum = calcSum(cattributes);
-		double avg = sum / catts.length;
+		double avg = sum / (double) catts.length;
 		return avg;
 	}
 
