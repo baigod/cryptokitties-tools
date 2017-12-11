@@ -2,9 +2,8 @@
 
 on
 
-https://www.cryptokitties.co
+http://cryptokitties.douboo.me/
 ====================
-Spring Boot based.
 
 By
 白神
@@ -13,7 +12,7 @@ By
 ### 云撸猫？我写个攻略帮助大家快速找到自己想要的猫
 
 
-##有问题反馈
+## 有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 * QQ: 387677341
 
