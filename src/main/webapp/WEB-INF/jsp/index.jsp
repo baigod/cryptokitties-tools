@@ -114,7 +114,7 @@
 						+ item.attr + '" target="_blank">'
 									+ item.attr
 									+ '<span class="badge badge-pill badge-secondary">'
-									+ item.num + '</span></a>' ].join('');
+									+ item.prop + '%</span></a>' ].join('');
 				}
 				return attrs;
 			},

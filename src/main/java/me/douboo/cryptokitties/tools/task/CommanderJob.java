@@ -2,7 +2,6 @@ package me.douboo.cryptokitties.tools.task;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map.Entry;

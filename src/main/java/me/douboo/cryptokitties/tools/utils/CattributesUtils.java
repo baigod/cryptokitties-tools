@@ -1,5 +1,8 @@
 package me.douboo.cryptokitties.tools.utils;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -81,6 +84,13 @@ public class CattributesUtils {
 		List<Entry<String, Integer>> sort = sort(true);
 		String[] catts = cattributes.split(",");
 
+		// 得出全平台猫总量
+		int attrSum = 0;
+		for (int j = 0; j < sort.size(); j++) {
+			attrSum += sort.get(j).getValue();
+		}
+		NumberFormat percent = NumberFormat.getPercentInstance();
+		percent.setMaximumFractionDigits(2);
 		// 遍历
 		if (ArrayUtils.isNotEmpty(catts))
 			for (int i = 0; i < catts.length; i++) {
@@ -90,6 +100,7 @@ public class CattributesUtils {
 						json.put("attr", catts[i]);
 						json.put("num", sort.get(j).getValue());
 						json.put("ranking", j + 1); // 排行
+						json.put("prop", percent.format(new BigDecimal(sort.get(j).getValue()).divide(new BigDecimal(attrSum), 2, RoundingMode.DOWN)));
 						array.add(json);
 					}
 				}
