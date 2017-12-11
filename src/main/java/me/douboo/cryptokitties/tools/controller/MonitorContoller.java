@@ -11,12 +11,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
+
+import me.douboo.cryptokitties.tools.task.CommanderJob;
 
 @Controller
 @RequestMapping
@@ -33,8 +34,8 @@ public class MonitorContoller {
 	@RequestMapping(path = "/data")
 	@ResponseBody
 	public JSONObject data(HttpServletRequest request, @RequestParam(required = false, defaultValue = "0") Integer offset, @RequestParam(required = false, defaultValue = "50") Integer limit, String sort, String order) {
+		request.setAttribute("connections", CommanderJob.commandQueue1.size());
 		JSONObject page = new JSONObject();
-
 		int total = jdbcTemplate.queryForObject("SELECT count(1) FROM t_auction a LEFT JOIN t_kitty k  ON a.`kitty_id` = k.`id` ", Integer.class);
 		page.put("total", total);
 

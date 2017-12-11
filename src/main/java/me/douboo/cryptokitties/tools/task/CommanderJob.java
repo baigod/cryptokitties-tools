@@ -2,7 +2,10 @@ package me.douboo.cryptokitties.tools.task;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -264,6 +267,24 @@ public class CommanderJob {
 		}
 
 		private String cattributes(List<Cattributes> cattributes) {
+			// 属性排序
+			cattributes.sort(new Comparator<Cattributes>() {
+				@Override
+				public int compare(Cattributes o1, Cattributes o2) {
+					List<Entry<String, Integer>> sortAttrs = CattributesUtils.sort(true);
+					int o1Index = 0, o2Index = 0;
+					for (int i = 0; i < sortAttrs.size(); i++) {
+						Entry<String, Integer> attr = sortAttrs.get(i);
+						if (attr.getKey().equals(o1.getDescription().trim())) {
+							o1Index = i;
+						} else if (attr.getKey().equals(o2.getDescription().trim())) {
+							o2Index = i;
+						}
+					}
+					return o1Index - o2Index;
+				}
+			});
+			// 瓶装
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < cattributes.size(); i++) {
 				Cattributes c = cattributes.get(i);
