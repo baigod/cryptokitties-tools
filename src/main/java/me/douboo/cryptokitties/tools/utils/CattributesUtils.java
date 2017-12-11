@@ -44,12 +44,12 @@ public class CattributesUtils {
 		return sum;
 	}
 
-	public static int calcAvg(String cattributes) {
+	public static double calcAvg(String cattributes) {
 		if (CollectionUtils.isEmpty(cattributesMap))
 			return 0;
 		String[] catts = cattributes.split(",");
 		int sum = calcSum(cattributes);
-		int avg = sum / catts.length;
+		double avg = sum / catts.length;
 		return avg;
 	}
 

@@ -192,7 +192,7 @@ public class CommanderJob {
 					}
 					String catts = cattributes(kitty.getCattributes());
 					int sum = CattributesUtils.calcSum(catts);
-					int avg = CattributesUtils.calcAvg(catts);
+					double avg = CattributesUtils.calcAvg(catts);
 					JSONArray tagArray = CattributesUtils.makeTag(catts);
 					int update = jdbcTemplate.update(
 							"INSERT INTO `t_kitty` (`id`, `kitty_name`, `image_url`, `generation`, `created_at` , `color`, `is_fancy`, `is_exclusive`, `fancy_type`, `owner_address` , `owner_nickname`, `owner_image`, `status_is_ready`, `status_is_gestating`, `status_cooldown` , `status_cooldown_index`, `bio`, `matron_id`, `sire_id`, `children_num` , `cattributes`, `cattributes_sum`, `cattributes_avg`, `cattributes_tags`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE `kitty_name` = ?, `image_url` = ?, `generation` = ?, `created_at` = ?, `color` = ?, `is_fancy` = ?, `is_exclusive` = ?, `fancy_type` = ?, `owner_address` = ?, `owner_nickname` = ?, `owner_image` = ?, `status_is_ready` = ?, `status_is_gestating` = ?, `status_cooldown` = ?, `status_cooldown_index` = ?, `bio` = ?, `matron_id` = ?, `sire_id` = ?, `children_num` = ?, `cattributes` = ?, `cattributes_sum` = ?, `cattributes_avg` = ?, `cattributes_tags` = ?",
