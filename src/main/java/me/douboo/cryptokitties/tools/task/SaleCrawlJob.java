@@ -42,7 +42,7 @@ public class SaleCrawlJob {
 				JSONObject json = JSONObject.parseObject(ret);
 				if (null != json) {
 					int total = json.getIntValue("total");
-					int group = 100;
+					int group = 20;
 					int p = (int) Math.ceil(total / (double) group);
 					logger.debug("共{}只，分成{}批抓取，每批{}只", total, p, group);
 					Kitties.sales.clear();
