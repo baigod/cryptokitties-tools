@@ -32,7 +32,7 @@ public class SaleCrawlJob {
 
 	public static final ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 4);
 
-	@Scheduled(fixedDelay = 1000,initialDelay=5000)
+	@Scheduled(fixedDelay = 1000, initialDelay = 5000)
 	public synchronized void exec1() {
 		try {
 			// 查询第一条
@@ -64,6 +64,10 @@ public class SaleCrawlJob {
 				}
 				latch.await();
 			}
+
+			while (CommanderJob.commandQueue1.size() != 0) {
+			}
+			logger.info("结束抓取周期...");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -133,7 +137,7 @@ public class SaleCrawlJob {
 		@Override
 		public void run() {
 			try {
-				String ret = curl("https://api.cryptokitties.co/auctions?offset=" + offset + "&limit=" + limit + "&type=sale&status=open&sorting=cheap&orderBy=current_price&orderDirection=asc");//&parents=false 
+				String ret = curl("https://api.cryptokitties.co/auctions?offset=" + offset + "&limit=" + limit + "&type=sale&status=open&sorting=cheap&orderBy=current_price&orderDirection=asc");// &parents=false
 				if (StringUtils.isNotEmpty(ret)) {
 					JSONObject json = JSONObject.parseObject(ret);
 					if (null != json) {
