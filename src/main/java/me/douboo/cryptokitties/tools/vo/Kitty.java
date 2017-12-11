@@ -50,7 +50,7 @@ public class Kitty implements Serializable {
 	}
 
 	public String getName() {
-		return StringUtils.isEmpty(name) ? "" : name.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "*");
+		return StringUtils.isEmpty(name) ? "--" : name.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "*");
 	}
 
 	public void setGeneration(int generation) {
