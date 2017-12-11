@@ -100,7 +100,7 @@ public class CattributesUtils {
 						json.put("attr", catts[i]);
 						json.put("num", sort.get(j).getValue());
 						json.put("ranking", j + 1); // 排行
-						json.put("prop", percent.format(new BigDecimal(sort.get(j).getValue()).divide(new BigDecimal(attrSum), 2, RoundingMode.DOWN)));
+						json.put("prop", percent.format(new BigDecimal(sort.get(j).getValue()).divide(new BigDecimal(attrSum), 2, RoundingMode.CEILING)));
 						array.add(json);
 					}
 				}
