@@ -97,13 +97,6 @@
 			return hex;
 		}
 
-		for (var i = 0; i < 65; i++) {
-			var s = colorRGB2Hex(255 + "," + i * 3 + "," + i * 3);
-			$("body")
-					.append(
-							'<div style="width: 20px;height: 10px;background-color:'+s+'"></div>');
-		}
-
 		var FMT = {
 			kittyUrl : function(value, row, index) {
 				return [ '<a href="https://www.cryptokitties.co/kitty/'+ row.id +'" target="_blank"><nobr>'
