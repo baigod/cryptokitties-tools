@@ -6,7 +6,7 @@
 <head lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>cryptokitties攻略</title>
+<title>Cryptokitties Fans</title>
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/bootstrap-table.css">
 <style type="text/css">
@@ -50,10 +50,10 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="/">cryptokitties攻略</a></li>
+		<li role="presentation" class="active"><a href="/">Cryptokitties Fans</a></li>
 	</ul>
 	<div id="toolbar">
-		<div style="font-weight: bold;">For Sale(在售)面板猫数据</div>
+		<div style="font-weight: bold;">For Sale Data Panel</div>
 	</div>
 	<table class="table" id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum"
 		data-sort-order="desc" data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true"
@@ -61,15 +61,15 @@
 		<thead>
 			<tr>
 				<th data-field="id" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl">id</th>
-				<th data-field="image_url" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyImg">图</th>
-				<th data-field="kitty_name" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl" data-cell-style="FMT.cellStyle">名</th>
-				<th data-field="generation" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-formatter="FMT.gen">代</th>
-				<th data-field="current_price" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-align="right">价</th>
-				<th data-field="children_num" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">孩子数量</th>
-				<th data-field="cattributes_sum" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">属性总分</th>
-				<th data-field="cattributes_avg" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">属性均分</th>
-				<th data-field="status_cooldown_index" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">怀孕CD</th>
-				<th data-field="cattributes" data-valign="middle" data-formatter="FMT.cattributes">属性</th>
+				<th data-field="image_url" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyImg">Photo</th>
+				<th data-field="kitty_name" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl" data-cell-style="FMT.cellStyle">Name</th>
+				<th data-field="generation" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-formatter="FMT.gen">Gen</th>
+				<th data-field="current_price" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-align="right">Price</th>
+				<th data-field="children_num" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Children num</th>
+				<th data-field="cattributes_sum" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Attr total score</th>
+				<th data-field="cattributes_avg" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Attr avg score</th>
+				<th data-field="status_cooldown_index" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Pregnant CD</th>
+				<th data-field="cattributes" data-valign="middle" data-formatter="FMT.cattributes">Attrs</th>
 			</tr>
 		</thead>
 	</table>
@@ -138,15 +138,15 @@
 
 	<footer>
 		<div style="font-weight: bold;">Help:</div>
-		<div>属性色值从深到浅，表示属性的稀有度排行</div>
+		<div>Attribute color values from deep to shallow to represent the rarity of attributes</div>
 		<div style="font-weight: bold;">Plans:</div>
-		<div>1.0:完成基本属性的销售数据查询</div>
-		<div>1.1:完成基本属性的求偶数据查询</div>
-		<div>2.0:基因数据快速匹配</div>
-		<div>3.0:基于销售和求偶的行情K线，对猫做估值计算</div>
+		<div>1.0:Sales data query for basic properties</div>
+		<div>1.1:Courtship data query with basic attributes</div>
+		<div>2.0:Fast matching of gene data</div>
+		<div>3.0:Valuation calculation of cats based on sales and courtship K-line</div>
 		<div style="font-weight: bold;">Notes:</div>
-		<div>如有需求、bug和建议，请加Q群469544103</div>
-		<div>捐助开发者(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
+		<div>If there are needs, bug and suggestions, please add QQGroup: 469544103</div>
+		<div>Donation developer(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
 	</footer>
 </body>
 </html>
