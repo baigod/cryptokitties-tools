@@ -10,7 +10,7 @@
 	<groupId>me.douboo.cryptokitties</groupId>
 	<artifactId>cryptokitties-tools</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>cryptokitties-tools</name>
 	<url>http://maven.apache.org</url>
