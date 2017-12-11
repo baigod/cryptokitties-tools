@@ -160,6 +160,11 @@ public class SaleCrawlJob {
 		try {
 			long startTime = System.currentTimeMillis();
 			HttpClientFactory fac = HttpClientFactory.createSSLInstance();
+			int timeout = 10000;
+			fac.setSocketTimeout(timeout);
+			fac.setRequestTimeout(timeout);
+			fac.setConnectTimeout(timeout);
+			fac.setRetry(3);
 			fac.addPostHeader("Origin", "https://www.cryptokitties.co");
 			fac.addPostHeader("Referer", "https://www.cryptokitties.co/marketplace/siring/1?orderBy=current_price&orderDirection=asc&sorting=cheap");
 			fac.addPostHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36 " + System.currentTimeMillis());

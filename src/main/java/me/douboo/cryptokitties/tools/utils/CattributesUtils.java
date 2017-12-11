@@ -27,7 +27,7 @@ public class CattributesUtils {
 		if (CollectionUtils.isEmpty(cattributesMap) || StringUtils.isEmpty(cattributes))
 			return 0;
 
-		List<Entry<String, Integer>> sort = sort();
+		List<Entry<String, Integer>> sort = sort(false);
 		String[] catts = cattributes.split(",");
 		int sum = 0;
 
@@ -53,14 +53,17 @@ public class CattributesUtils {
 		return avg;
 	}
 
-	public static List<Entry<String, Integer>> sort() {
+	public static List<Entry<String, Integer>> sort(boolean asc) {
 		// 排序
 		List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(cattributesMap.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
 			@Override
 			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
 				// 升序排序
-				return o1.getValue().compareTo(o2.getValue());
+				if (asc)
+					return o1.getValue().compareTo(o2.getValue());
+				else
+					return o2.getValue().compareTo(o1.getValue());
 			}
 		});
 		if (logger.isTraceEnabled())
@@ -75,7 +78,7 @@ public class CattributesUtils {
 		JSONArray array = new JSONArray();
 		if (CollectionUtils.isEmpty(cattributesMap))
 			return array;
-		List<Entry<String, Integer>> sort = sort();
+		List<Entry<String, Integer>> sort = sort(true);
 		String[] catts = cattributes.split(",");
 
 		// 遍历
