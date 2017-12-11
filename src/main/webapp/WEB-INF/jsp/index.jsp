@@ -138,7 +138,7 @@
 		<div>2.0:基因数据快速匹配</div>
 		<div>3.0:基于销售和求偶的行情K线，对猫做估值计算</div>
 		<div style="font-weight: bold;">Notes:</div>
-		<div>如有需求和建议，请加Q群469544103</div>
+		<div>如有需求、bug和建议，请加Q群469544103</div>
 		<div>捐助开发者(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
 	</footer>
 </body>
