@@ -5,6 +5,8 @@ package me.douboo.cryptokitties.tools.vo;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.util.StringUtils;
+
 /**
  * Auto-generated: 2017-12-07 20:53:50
  *
@@ -37,7 +39,7 @@ public class Matron  implements Serializable {
          this.name = name;
      }
      public String getName() {
-         return name;
+         return StringUtils.isEmpty(name) ? "" : name.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "*");
      }
 
     public void setGeneration(int generation) {
