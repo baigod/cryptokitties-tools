@@ -2,9 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head lang="en">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>cryptokitties攻略</title>
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/bootstrap-table.css">
@@ -48,11 +49,15 @@
 </style>
 </head>
 <body>
-	<h1>cryptokitties攻略</h1>
-	<div id="toolbar"><div style="font-weight: bold;">For Sale(在售)面板猫数据</div></div>
-	<table id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum" data-sort-order="desc"
-		data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true" data-click-to-select="true"
-		data-page-list="[10, 25, 50, 100,500, All]">
+	<ul class="nav nav-tabs">
+		<li role="presentation" class="active"><a href="/">cryptokitties攻略</a></li>
+	</ul>
+	<div id="toolbar">
+		<div style="font-weight: bold;">For Sale(在售)面板猫数据</div>
+	</div>
+	<table class="table" id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum"
+		data-sort-order="desc" data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true"
+		data-click-to-select="true" data-page-list="[10, 25, 50, 100,500, All]">
 		<thead>
 			<tr>
 				<th data-field="id" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl">id</th>
