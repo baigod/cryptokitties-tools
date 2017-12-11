@@ -68,6 +68,7 @@
 				<th data-field="children_num" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">孩子数量</th>
 				<th data-field="cattributes_sum" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">属性总分</th>
 				<th data-field="cattributes_avg" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">属性均分</th>
+				<th data-field="status_cooldown_index" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">怀孕CD</th>
 				<th data-field="cattributes" data-valign="middle" data-formatter="FMT.cattributes">属性</th>
 			</tr>
 		</thead>

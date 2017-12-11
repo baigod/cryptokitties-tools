@@ -39,7 +39,7 @@ public class MonitorContoller {
 		int total = jdbcTemplate.queryForObject("SELECT count(1) FROM t_auction a LEFT JOIN t_kitty k  ON a.`kitty_id` = k.`id` ", Integer.class);
 		page.put("total", total);
 
-		String sql = "SELECT k.`image_url`,k.`bio`,a.`current_price`,k.`id`,k.`kitty_name`,k.`generation`,k.`children_num`,k.`cattributes_sum`,k.`cattributes_avg`,k.`cattributes`,k.`cattributes_tags` FROM t_auction a LEFT JOIN t_kitty k  ON a.`kitty_id` = k.`id`  ";
+		String sql = "SELECT k.`status_cooldown_index`,k.`image_url`,k.`bio`,a.`current_price`,k.`id`,k.`kitty_name`,k.`generation`,k.`children_num`,k.`cattributes_sum`,k.`cattributes_avg`,k.`cattributes`,k.`cattributes_tags` FROM t_auction a LEFT JOIN t_kitty k  ON a.`kitty_id` = k.`id`  ";
 		if ("current_price".equals(sort)) {
 			sql += "order by " + sort + " " + order;
 		} else {
@@ -61,6 +61,7 @@ public class MonitorContoller {
 				item.put("cattributes_tags", rs.getString("cattributes_tags"));
 				item.put("image_url", rs.getString("image_url"));
 				item.put("bio", rs.getString("bio"));
+				item.put("status_cooldown_index", rs.getString("status_cooldown_index"));
 				return item;
 			}
 		});
