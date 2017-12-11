@@ -36,7 +36,7 @@ public class SaleCrawlJob {
 	public synchronized void exec1() {
 		try {
 			// 查询第一条
-			String ret = curl("https://api.cryptokitties.co/auctions?offset=0&limit=1&type=sire&status=open&sorting=cheap&orderBy=current_price&orderDirection=asc");
+			String ret = curl("https://api.cryptokitties.co/auctions?offset=0&limit=1&type=sale&status=open");//&parents=false
 			logger.debug("查询第一条：{}", ret);
 			if (StringUtils.isNotEmpty(ret)) {
 				JSONObject json = JSONObject.parseObject(ret);
