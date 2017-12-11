@@ -74,6 +74,18 @@
 		</thead>
 	</table>
 
+	<footer>
+		<div style="font-weight: bold;">Help:</div>
+		<div>Attribute color values from deep to shallow to represent the rarity of attributes</div>
+		<div style="font-weight: bold;">Plans:</div>
+		<div>1.0:Sales data query for basic properties</div>
+		<div>1.1:Courtship data query with basic attributes</div>
+		<div>2.0:Fast matching of gene data</div>
+		<div>3.0:Valuation calculation of cats based on sales and courtship K-line</div>
+		<div style="font-weight: bold;">Notes:</div>
+		<div>If there are needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a></div>
+		<div>Donation developer(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
+	</footer>
 
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
@@ -133,20 +145,20 @@
 				};
 			}
 		};
+		
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111039393-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-111039393-1');
 	</script>
 
 
-	<footer>
-		<div style="font-weight: bold;">Help:</div>
-		<div>Attribute color values from deep to shallow to represent the rarity of attributes</div>
-		<div style="font-weight: bold;">Plans:</div>
-		<div>1.0:Sales data query for basic properties</div>
-		<div>1.1:Courtship data query with basic attributes</div>
-		<div>2.0:Fast matching of gene data</div>
-		<div>3.0:Valuation calculation of cats based on sales and courtship K-line</div>
-		<div style="font-weight: bold;">Notes:</div>
-		<div>If there are needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a></div>
-		<div>Donation developer(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
-	</footer>
+
 </body>
 </html>
