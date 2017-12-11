@@ -26,13 +26,21 @@ public class CattributesUtils {
 	public static int calcSum(String cattributes) {
 		if (CollectionUtils.isEmpty(cattributesMap) || StringUtils.isEmpty(cattributes))
 			return 0;
+
+		List<Entry<String, Integer>> sort = sort();
 		String[] catts = cattributes.split(",");
 		int sum = 0;
-		if (null != catts && catts.length > 0) {
-			for (String catt : catts) {
-				sum += cattributesMap.get(catt);
+
+		// 遍历
+		if (ArrayUtils.isNotEmpty(catts))
+			for (int i = 0; i < catts.length; i++) {
+				for (int j = 0; j < sort.size(); j++) {
+					if (sort.get(j).getKey().equals(catts[i])) {
+						sum += j + 1;
+					}
+				}
 			}
-		}
+
 		return sum;
 	}
 
