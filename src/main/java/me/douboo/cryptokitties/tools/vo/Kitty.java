@@ -90,7 +90,7 @@ public class Kitty implements Serializable {
 	}
 
 	public String getBio() {
-		return bio;
+		return StringUtils.isEmpty(bio) ? "" : bio.replaceAll("[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]", "*");
 	}
 
 	public void setIs_fancy(boolean is_fancy) {
