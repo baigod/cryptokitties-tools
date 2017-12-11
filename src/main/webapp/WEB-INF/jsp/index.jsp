@@ -48,9 +48,10 @@
 </style>
 </head>
 <body>
-	<h1>cryptokitties</h1>
-	<table id="table" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum" data-sort-order="desc" data-side-pagination="server"
-		data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true" data-click-to-select="true"
+	<h1>cryptokitties攻略</h1>
+	<div id="toolbar"><div style="font-weight: bold;">For Sale(在售)面板猫数据</div></div>
+	<table id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum" data-sort-order="desc"
+		data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true" data-click-to-select="true"
 		data-page-list="[10, 25, 50, 100,500, All]">
 		<thead>
 			<tr>
