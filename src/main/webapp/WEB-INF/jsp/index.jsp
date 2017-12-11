@@ -49,31 +49,32 @@
 </style>
 </head>
 <body>
-	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="/">Cryptokitties Fans</a></li>
-	</ul>
-	<div id="toolbar">
-		<div style="font-weight: bold;">For Sale Data Panel</div>
+	<div class="container-fluid">
+		<ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="/">Cryptokitties Fans</a></li>
+		</ul>
+		<div id="toolbar">
+			<div style="font-weight: bold;">For Sale Data Panel</div>
+		</div>
+		<table data-search="true" data-show-refresh="true" class="table" id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data"
+			data-sort-name="cattributes_sum" data-sort-order="desc" data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true"
+			data-show-columns="true" data-click-to-select="true" data-page-list="[10, 25, 50, 100,500, All]">
+			<thead>
+				<tr>
+					<th data-field="id" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl">id</th>
+					<th data-field="image_url" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyImg">Photo</th>
+					<th data-field="kitty_name" data-width="150px" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl" data-cell-style="FMT.nameStyle">Name</th>
+					<th data-field="generation" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-formatter="FMT.gen">Gen</th>
+					<th data-field="current_price" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-align="right">Price</th>
+					<th data-field="children_num" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Children num</th>
+					<th data-field="cattributes_sum" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Attr total score</th>
+					<th data-field="cattributes_avg" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Attr avg score</th>
+					<th data-field="status_cooldown_index" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Pregnant CD</th>
+					<th data-field="cattributes" data-valign="middle" data-formatter="FMT.cattributes">Attrs</th>
+				</tr>
+			</thead>
+		</table>
 	</div>
-	<table class="table" id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum"
-		data-sort-order="desc" data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true"
-		data-click-to-select="true" data-page-list="[10, 25, 50, 100,500, All]">
-		<thead>
-			<tr>
-				<th data-field="id" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl">id</th>
-				<th data-field="image_url" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyImg">Photo</th>
-				<th data-field="kitty_name" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl" data-cell-style="FMT.cellStyle">Name</th>
-				<th data-field="generation" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-formatter="FMT.gen">Gen</th>
-				<th data-field="current_price" data-width="2%" data-valign="middle" data-align="center" data-sortable="true" data-align="right">Price</th>
-				<th data-field="children_num" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Children num</th>
-				<th data-field="cattributes_sum" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Attr total score</th>
-				<th data-field="cattributes_avg" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Attr avg score</th>
-				<th data-field="status_cooldown_index" data-width="2%" data-valign="middle" data-align="center" data-sortable="true">Pregnant CD</th>
-				<th data-field="cattributes" data-valign="middle" data-formatter="FMT.cattributes">Attrs</th>
-			</tr>
-		</thead>
-	</table>
-
 	<footer>
 		<div style="font-weight: bold;">Help:</div>
 		<div>Attribute color values from deep to shallow to represent the rarity of attributes</div>
@@ -83,14 +84,16 @@
 		<div>2.0:Fast matching of gene data</div>
 		<div>3.0:Valuation calculation of cats based on sales and courtship K-line</div>
 		<div style="font-weight: bold;">Notes:</div>
-		<div>If there are needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a></div>
+		<div>
+			If there are needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a>
+		</div>
 		<div>Donation developer(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
 	</footer>
 
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap-table.min.js"></script>
-	<script type="text/javascript" src="/static/js/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="/static/js/locale/bootstrap-table-en-US.min.js"></script>
 	<script type="text/javascript">
 		function colorRGB2Hex(color) {
 			var rgb = color.split(',');
@@ -105,8 +108,8 @@
 
 		var FMT = {
 			kittyUrl : function(value, row, index) {
-				return [ '<a href="https://www.cryptokitties.co/kitty/'+ row.id +'" target="_blank"><nobr>'
-						+ value + '</nobr></a>' ].join('');
+				return [ '<a href="https://www.cryptokitties.co/kitty/'+ row.id +'" target="_blank">'
+						+ value + '</a>' ].join('');
 			},
 			gen : function(value, row, index) {
 				return [ '<a href="https://www.cryptokitties.co/marketplace?search=gen:'
@@ -123,8 +126,11 @@
 							+ colorRGB2Hex(255 + "," + item.ranking * 3 + ","
 									+ item.ranking * 3);
 					attrs = attrs
-							+ [ '<a class="badge badge-pill badge-cattribute" style="'+bcolor+'" href="https://www.cryptokitties.co/marketplace/sale?search='
-						+ item.attr + '" target="_blank">'
+							+ [ '<a class="badge badge-pill badge-cattribute" style="'
+									+ bcolor
+									+ '" href="https://www.cryptokitties.co/marketplace/sale?search='
+									+ item.attr
+									+ '" target="_blank">'
 									+ item.attr
 									+ '<span class="badge badge-pill badge-secondary">'
 									+ item.prop + '</span></a>' ].join('');
@@ -135,27 +141,28 @@
 				return [ '<img alt="'+row.bio+'" title="'+row.bio+'" src="'+row.image_url+'" width="65px" height="65px">' ]
 						.join('');
 			},
-			cellStyle : function(value, row, index, field) {
+			nameStyle : function(value, row, index, field) {
 				return {
 					css : {
 						"text-overflow" : "ellipsis ",
-						"white-space" : "nowrap",
+// 						"white-space" : "nowrap",
 						"overflow" : "hidden "
 					}
 				};
 			}
 		};
-		
 	</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111039393-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'UA-111039393-1');
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-111039393-1');
 	</script>
 
 
