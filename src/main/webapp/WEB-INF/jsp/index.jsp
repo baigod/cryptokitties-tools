@@ -110,7 +110,7 @@
 							+ colorRGB2Hex(255 + "," + item.ranking * 3 + ","
 									+ item.ranking * 3);
 					attrs = attrs
-							+ [ '<a class="badge badge-pill badge-cattribute" style="'+bcolor+'" href="http://cryptokittydex.com/cattributes/'
+							+ [ '<a class="badge badge-pill badge-cattribute" style="'+bcolor+'" href="https://www.cryptokitties.co/marketplace/sale?search='
 						+ item.attr + '" target="_blank">'
 									+ item.attr
 									+ '<span class="badge badge-pill badge-secondary">'
