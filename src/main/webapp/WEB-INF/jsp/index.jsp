@@ -84,7 +84,7 @@
 		<div>3.0:Valuation calculation of cats based on sales and courtship K-line</div>
 		<div style="font-weight: bold;">Notes:</div>
 		<div>
-			If there are needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a>
+			If you have needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a>
 		</div>
 		<div>Donation developer(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
 	</footer>
