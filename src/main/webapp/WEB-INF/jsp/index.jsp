@@ -53,11 +53,11 @@
 		<ul class="nav nav-tabs">
 			<li role="presentation" class="active"><a href="/">For Sale</a></li>
 		</ul>
-		<div id="toolbar">
-		</div>
-		<table data-search="true" data-search-text="" data-search-on-enter-key="true" data-show-refresh="true" data-id-field="id" class="table" id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data"
-			data-sort-name="cattributes_sum" data-sort-order="desc" data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true"
-			data-show-columns="true" data-click-to-select="true" data-page-list="[10, 25, 50, 100,500, All]">
+		<div id="toolbar"></div>
+		<table data-search="true" data-search-text="" data-search-on-enter-key="true" data-show-refresh="true" data-id-field="id" class="table" id="table" data-toolbar="#toolbar"
+			data-height="200px" data-toggle="table" data-height="460" data-url="/data" data-sort-name="cattributes_sum" data-sort-order="desc" data-side-pagination="server"
+			data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true" data-show-columns="true" data-click-to-select="true"
+			data-page-list="[10, 25, 50, 100,500, All]">
 			<thead>
 				<tr>
 					<th data-field="id" data-width="2%" data-valign="middle" data-align="center" data-formatter="FMT.kittyUrl">id</th>
@@ -74,22 +74,29 @@
 			</thead>
 		</table>
 	</div>
-	<footer>
-		<div style="font-weight: bold;">Help:</div>
-		<div>Attribute color values from deep to shallow to represent the rarity of attributes</div>
-		<div style="font-weight: bold;">Plans:</div>
-		<div>1.0:Sales data query for basic properties</div>
-		<div>1.1:Courtship data query with basic attributes</div>
-		<div>2.0:Fast matching of gene data</div>
-		<div>3.0:Valuation calculation of cats based on sales and courtship K-line</div>
-		<div style="font-weight: bold;">Notes:</div>
-		<div>
-			If you have needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a>
-		</div>
-		<div>Donation developer(ETH): <b style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</b></div>
-		<div>Friendship Links: <a href="http://www.kittyexplorer.com/">Kitty Explorer</a></div>
-	</footer>
-
+	<blockquote>
+		<footer>
+			<div style="font-weight: bold;">Help:</div>
+			<p>Attribute color values from deep to shallow to represent the rarity of attributes</p>>
+			<div style="font-weight: bold;">Plans:</div>
+			<ul>
+				<li>1.0:Sales data query for basic properties</li>
+				<li>1.1:Courtship data query with basic attributes</li>
+				<li>2.0:Fast matching of gene data</li>
+				<li>3.0:Valuation calculation of cats based on sales and courtship K-line</li>
+			</ul>
+			<div style="font-weight: bold;">Notes:</div>
+			<div>
+				If you have needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a>
+			</div>
+			<div>
+				Donation developer(ETH): <cite title="Source Title" style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</cite>
+			</div>
+			<div>
+				Friendship Links: <a href="http://www.kittyexplorer.com/">Kitty Explorer</a>
+			</div>
+		</footer>
+	</blockquote>
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap-table.min.js"></script>
@@ -145,7 +152,7 @@
 				return {
 					css : {
 						"text-overflow" : "ellipsis ",
-// 						"white-space" : "nowrap",
+						// 						"white-space" : "nowrap",
 						"overflow" : "hidden "
 					}
 				};
