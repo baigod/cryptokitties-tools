@@ -51,10 +51,9 @@
 <body>
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-			<li role="presentation" class="active"><a href="/">Cryptokitties Fans</a></li>
+			<li role="presentation" class="active"><a href="/">For Sale</a></li>
 		</ul>
 		<div id="toolbar">
-			<div style="font-weight: bold;">For Sale Data Panel</div>
 		</div>
 		<table data-search="true" data-search-text="" data-search-on-enter-key="true" data-show-refresh="true" data-id-field="id" class="table" id="table" data-toolbar="#toolbar" data-height="200px" data-toggle="table" data-height="460" data-url="/data"
 			data-sort-name="cattributes_sum" data-sort-order="desc" data-side-pagination="server" data-pagination="true" data-page-number="1" data-page-size="10" data-show-toggle="true"
