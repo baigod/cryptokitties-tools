@@ -86,7 +86,8 @@
 		<div>
 			If you have needs, bug and suggestions, please add QQGroup: <a href="https://jq.qq.com/?_wv=1027&k=5FsEG0t" target="_blank">469544103</a>
 		</div>
-		<div>Donation developer(ETH):0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</div>
+		<div>Donation developer(ETH): <b style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</b></div>
+		<div>Friendship Links: <a href="http://www.kittyexplorer.com/">Kitty Explorer</a></div>
 	</footer>
 
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
