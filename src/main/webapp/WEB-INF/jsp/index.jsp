@@ -138,7 +138,7 @@
 				return attrs;
 			},
 			kittyImg : function(value, row, index) {
-				return [ '<img alt="'+row.bio+'" title="'+row.bio+'" src="'+row.image_url+'" width="65px" height="65px">' ]
+				return [ '<img title="'+row.bio+'" src="'+row.image_url+'" width="65px" height="65px">' ]
 						.join('');
 			},
 			nameStyle : function(value, row, index, field) {
