@@ -35,7 +35,6 @@ spring:
 spring:
   profiles: production
   datasource:
-    url: jdbc:mysql://rm-3ns4k42z4t1s5409a.mysql.rds.aliyuncs.com:3306/ck-data?rewriteBatchedStatements=true&useUnicode=true
     username: ck_data
     password: QWE123zxc
 
