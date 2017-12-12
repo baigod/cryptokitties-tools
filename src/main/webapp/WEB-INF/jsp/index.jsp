@@ -93,7 +93,7 @@
 				Donation developer(ETH): <cite title="Source Title" style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</cite>
 			</div>
 			<div>
-				Friendship Links: <a href="http://www.kittyexplorer.com/">Kitty Explorer</a>
+				Friendship Links: <a href="http://www.kittyexplorer.com/" target="_blank">Kitty Explorer</a>
 			</div>
 		</footer>
 	</blockquote>
