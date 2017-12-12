@@ -77,7 +77,7 @@
 	<blockquote>
 		<footer>
 			<div style="font-weight: bold;">Help:</div>
-			<p>Attribute color values from deep to shallow to represent the rarity of attributes</p>>
+			<samp>Attribute color values from deep to shallow to represent the rarity of attributes</samp>
 			<div style="font-weight: bold;">Plans:</div>
 			<ul>
 				<li>1.0:Sales data query for basic properties</li>
