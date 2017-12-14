@@ -83,7 +83,7 @@
 				If you have needs, bug and suggestions, please call: <a href="https://github.com/15174834/cryptokitties-tools/issues" target="_blank">GitHub</a>
 			</div>
 			<div>
-				If you need VPN, you can donate developer ETH: <mark style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</mark>:), bring your mail address in TRANSACTION DATA. And I'll send you the <a href="/files/Shadowsocks.exe" target="_blank">Shadowsocks</a> connection after receiving the currency..<br>
+				If you need VPN, you can donate developer ETH: <mark style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</mark>:), bring your mail address in TRANSACTION DATA. And I'll send you the <a href="/static/files/Shadowsocks.exe" target="_blank">Shadowsocks</a> connection after receiving the currency..<br>
 			</div>
 			<div>
 				Friendship Links: <a href="http://www.kittyexplorer.com/" target="_blank">Kitty Explorer</a>
