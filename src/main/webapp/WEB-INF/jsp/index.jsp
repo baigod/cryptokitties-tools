@@ -87,7 +87,7 @@
 			</ul>
 			<div style="font-weight: bold;">Notes:</div>
 			<div>
-				If you have needs, bug and suggestions, please call: <a href="https://github.com/15174834" target="_blank">GitHub</a>
+				If you have needs, bug and suggestions, please call: <a href="https://github.com/15174834/cryptokitties-tools" target="_blank">GitHub</a>
 			</div>
 			<div>
 				Donation developer(ETH): <mark style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</mark>
