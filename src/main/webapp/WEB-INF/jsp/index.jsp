@@ -78,7 +78,6 @@
 		<footer>
 			<div style="font-weight: bold;">Help:</div>
 			<samp>Attribute color values from deep to shallow to represent the rarity of attributes</samp>
-			<div style="font-weight: bold;">Plans:</div>
 			<div style="font-weight: bold;">Notes:</div>
 			<div>
 				If you have needs, bug and suggestions, please call: <a href="https://github.com/15174834/cryptokitties-tools/issues" target="_blank">GitHub</a>
