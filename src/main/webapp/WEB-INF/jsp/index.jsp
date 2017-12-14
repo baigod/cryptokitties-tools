@@ -79,18 +79,12 @@
 			<div style="font-weight: bold;">Help:</div>
 			<samp>Attribute color values from deep to shallow to represent the rarity of attributes</samp>
 			<div style="font-weight: bold;">Plans:</div>
-			<ul>
-				<li>1.0:Sales data query for basic properties</li>
-				<li>1.1:Courtship data query with basic attributes</li>
-				<li>2.0:Fast matching of gene data</li>
-				<li>3.0:Valuation calculation of cats based on sales and courtship K-line</li>
-			</ul>
 			<div style="font-weight: bold;">Notes:</div>
 			<div>
 				If you have needs, bug and suggestions, please call: <a href="https://github.com/15174834/cryptokitties-tools/issues" target="_blank">GitHub</a>
 			</div>
 			<div>
-				Donation developer(ETH): <mark style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</mark>
+				If you need VPN, you can donate developer to (ETH: <mark style="cursor: pointer;">0x23b96A20Fae711ED6D286feAEED437a6831e3dD7</mark>), bring your mail address in TRANSACTION DATA. And I'll send you the connection after receiving the currency..<br>
 			</div>
 			<div>
 				Friendship Links: <a href="http://www.kittyexplorer.com/" target="_blank">Kitty Explorer</a>
