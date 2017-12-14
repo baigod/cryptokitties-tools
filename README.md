@@ -5,9 +5,9 @@ goto
 http://cryptokitties.douboo.me/
 ====================
 
-### 云撸猫？我写个攻略帮助大家快速找到自己想要的猫
+### The clouds rolled cat? I write a strategy to help you quickly find the cat you want
 
-捐助开发者<br>
+Donate developers, get VPN<br>
 0x23b96A20Fae711ED6D286feAEED437a6831e3dD7
 
 
